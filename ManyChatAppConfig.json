@@ -1,0 +1,189 @@
+{
+  "auth": {
+    "type": "APIKEY",
+    "params": [
+      {
+        "name": "zwsid",
+        "title": "Enter Zillow Web Services ID (ZWSID):"
+      }
+    ],
+    "connection": {
+      "qs": {
+        "zwsid": "[[zwsid]]"
+      }
+    }
+  },
+  "actions": [
+    {
+      "name": "home_value",
+      "forms": [
+        {
+          "name": "address",
+          "type": "string",
+          "title": "Choose Custom Field for address"
+        },
+        {
+          "name": "citystatezip",
+          "type": "string",
+          "title": "Choose Custom Field for city + state or zip"
+        }
+      ],
+      "title": "Get a home value",
+      "requests": [
+        {
+          "url": "{{ENDPOINT_URL}}/get_valuation_by_address_and_zip",
+          "method": "POST",
+          "headers": [
+            "Content-Type: application/json"
+          ],
+          "mapping": [
+            {
+              "name": "code",
+              "path": "$.code",
+              "type": "string",
+              "title": "Status code"
+            },
+            {
+              "name": "response_text",
+              "path": "$.response_text",
+              "type": "string",
+              "title": "Response message"
+            },
+            {
+              "name": "zpid",
+              "path": "$.zpid",
+              "type": "string",
+              "title": "Zillow Property ID"
+            },
+            {
+              "name": "zestimate_amount_formatted",
+              "path": "$.zestimate_amount_formatted",
+              "type": "string",
+              "title": "Zestimate: amount formatted"
+            },
+            {
+              "name": "zestimate_valuation_range_low_formatted",
+              "path": "$.zestimate_valuation_range_low_formatted",
+              "type": "string",
+              "title": "Zestimate: Valuation low formatted"
+            },
+            {
+              "name": "zestimate_valuation_range_high_formatted",
+              "path": "$.zestimate_valuation_range_high_formatted",
+              "type": "string",
+              "title": "Zestimate: Valuation high formatted"
+            },
+            {
+              "name": "links_home_details",
+              "path": "$.links_home_details",
+              "type": "string",
+              "title": "Links: Home details page"
+            },
+            {
+              "name": "links_graphs_and_data",
+              "path": "$.links_graphs_and_data",
+              "type": "string",
+              "title": "Links: Chart data page"
+            },
+            {
+              "name": "links_map_this_home",
+              "path": "$.links_map_this_home",
+              "type": "string",
+              "title": "Links: Map this home page"
+            },
+            {
+              "name": "links_comparables",
+              "path": "$.links_comparables",
+              "type": "string",
+              "title": "Links: Similar sales page"
+            },
+            {
+              "name": "address_street",
+              "path": "$.address_street",
+              "type": "string",
+              "title": "Full address: Street address"
+            },
+            {
+              "name": "address_zipcode",
+              "path": "$.address_zipcode",
+              "type": "string",
+              "title": "Full address: ZIP code"
+            },
+            {
+              "name": "address_city",
+              "path": "$.address_city",
+              "type": "string",
+              "title": "Full address: City"
+            },
+            {
+              "name": "address_state",
+              "path": "$.address_state",
+              "type": "string",
+              "title": "Full address: State"
+            },
+            {
+              "name": "address_latitude",
+              "path": "$.address_latitude",
+              "type": "string",
+              "title": "Full address: Latitude"
+            },
+            {
+              "name": "address_longitude",
+              "path": "$.address_longitude",
+              "type": "string",
+              "title": "Full address: Longitude"
+            },
+            {
+              "name": "zestimate_amount_value",
+              "path": "$.zestimate_amount_value",
+              "type": "string",
+              "title": "Zestimate: amount value"
+            },
+            {
+              "name": "zestimate_amount_currency",
+              "path": "$.zestimate_amount_currency",
+              "type": "string",
+              "title": "Zestimate: amount currency"
+            },
+            {
+              "name": "zestimate_last_updated",
+              "path": "$.zestimate_last_updated",
+              "type": "string",
+              "title": "Zestimate: Last updated date"
+            },
+            {
+              "name": "zestimate_valuation_range_low_value",
+              "path": "$.zestimate_valuation_range_low_value",
+              "type": "string",
+              "title": "Zestimate: Valuation low value"
+            },
+            {
+              "name": "zestimate_valuation_range_low_currency",
+              "path": "$.zestimate_valuation_range_low_currency",
+              "type": "string",
+              "title": "Zestimate: Valuation low currency"
+            },
+            {
+              "name": "zestimate_valuation_range_high_value",
+              "path": "$.zestimate_valuation_range_high_value",
+              "type": "string",
+              "title": "Zestimate: Valuation high value"
+            },
+            {
+              "name": "zestimate_valuation_range_high_currency",
+              "path": "$.zestimate_valuation_range_high_currency",
+              "type": "string",
+              "title": "Zestimate: Valuation high currency"
+            }
+          ],
+          "payload": {
+            "address": "[[address]]",
+            "citystatezip": "[[citystatezip]]"
+          }
+        }
+      ],
+      "description": "Allows you to get a home valuation for a specified address"
+    }
+  ],
+  "sources": []
+}
