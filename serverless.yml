@@ -1,0 +1,7 @@
+app: manychat-home-valuation-app
+component: express
+name: manychat-home-valuation-app
+
+inputs:
+  src: ./
+  region: eu-central-1

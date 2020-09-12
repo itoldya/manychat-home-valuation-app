@@ -1,0 +1,10 @@
+{
+  "request": {
+    "address": "",
+    "citystatezip": ""
+  },
+  "message": {
+    "text": "Error: invalid or missing ZWSID parameter",
+    "code": "2"
+  }
+}

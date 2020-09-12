@@ -1,0 +1,35 @@
+{
+  "name": "manychat-home-valuation-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itoldya/manychat-home-valuation-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itoldya/manychat-home-valuation-app/issues"
+  },
+  "homepage": "https://github.com/itoldya/manychat-home-valuation-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "currency-formatter": "^1.5.6",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "lodash.get": "^4.4.2",
+    "node-zillow": "^2.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "jest": "^26.4.2",
+    "serverless": "^2.0.0",
+    "supertest": "^4.0.2"
+  }
+}
